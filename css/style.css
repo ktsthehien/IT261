@@ -1,0 +1,124 @@
+/* styles for my website */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ddd;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,p{
+    margin: 20px 20px;
+}
+li{
+    margin-left: 60px;
+}
+
+header {
+    background: black;
+    overflow:hidden;
+    padding: 20px 0;
+}
+
+#inner-header,
+#inner-footer {
+    margin:20px auto;
+    max-width: 1200px;
+}
+#logo{
+    float:left;
+    width: 60px;
+}
+
+#logo_text{
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    text-decoration: none;
+    font-size: 30pt;
+    margin-left:20px;
+    margin-top: 50px;
+
+}
+nav ul {
+    float: right;
+    margin-top: 30px;;
+}
+
+nav li {
+    float: left;
+    margin-left: 80px;
+    list-style-type:none;
+    
+}
+.current {
+    color: red;
+    }
+nav a {
+    text-decoration: none;
+    color: white;
+}
+#wrapper{
+    margin:20px auto;
+    max-width: 1200px;
+}
+
+#hero{
+    height: 300px;
+    background: red;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+main {
+    width:68%;
+    padding:5px;
+    margin-bottom: 20px;
+    float:left;
+
+}
+
+#daily_photo{ float:left;
+    margin:20px 20px;
+    width: 600px;
+
+}
+
+#my_photo{
+    float:left;
+    margin:20px 20px;
+    width: 280px;
+}
+#mamp_title, #error_title{
+    float:left;
+    clear:both;
+}
+#mamp,#error{
+    float:left;
+    margin:20px 20px;
+    width: 100%;
+    clear:both;
+}
+
+aside{
+    width:30%;
+    padding: 5px;
+    float: right;
+}
+
+footer {
+    border-top: 1px solid #666;
+    height:50px;
+    clear:both;
+    height: 50px;
+    line-height: 50px;
+}
+
+footer li {
+    float:left;
+    margin-right:30px;
+    list-style-type: none;
+}

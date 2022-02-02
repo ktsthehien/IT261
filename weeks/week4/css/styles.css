@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form {
+    width: 400px;
+    margin: 30px auto;
+    border: 1px solid green;
+    padding: 10px;
+}
+
+.celcius form {
+    border: none;
+    padding: 0;
+}
+
+.celcius fieldset {
+    border: 1px solid coral;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    display: block;
+    height: 30px;
+}
+
+textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+legend {
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+p {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.error, .hot {
+    color: red;
+    font-style: italic;
+}
+
+.box {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.celcius form {
+    border: none;
+    padding: 0;
+}
+
+.celcius fieldset {
+    border: 1px solid coral;
+    padding: 10px;
+}
