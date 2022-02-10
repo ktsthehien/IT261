@@ -1,0 +1,106 @@
+/* styles for my currency form */
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background: beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+form{
+    width:400px;
+    margin:20px auto;
+    border:1px solid brown
+    padding:15px;
+}
+
+label{
+    display:block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+input{
+    margin-bottom:10px;
+}
+
+select{
+    margin-bottom:10px ;
+}
+
+
+
+
+form li {
+    line-height: 0.8;
+    list-style-type: none;
+}
+
+label +ul {
+    margin:10px 0 10px 15px
+}
+
+input[type=radio]{
+    margin-right: 3px;
+    height: auto;
+    width:auto;
+}
+
+input[type=submit]{
+    height: auto;
+    width:auto;
+}
+
+input {
+    height: 30px;
+    width:100%;
+}
+
+select{
+    display:block;
+    margin-bottom: 10px;
+}
+
+button{
+    display: block;
+    padding: 10px;
+    background: tan;
+    text-align: center;
+    margin:20px auto;
+}
+
+button a{
+    color: red;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.box{
+    width: 500px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+/*typography */
+h1,h2{
+    text-align:center;
+    margin-top: 20px;
+    font-family: playfair, serif;
+}
+
+.box h2{
+    color:green;
+}
+
+.error{
+    display:block;
+    text-align: center;
+    color:red;
+    font-style: italic;
+    font-size: .9em;
+}
