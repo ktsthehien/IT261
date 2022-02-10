@@ -107,9 +107,12 @@ if(isset($_POST['name'],
 
 $name = $_POST['name'];
 $email = $_POST['email'];
-$amount = $_POST['amount'];
-$currency = $_POST['currency'];
+$amount = intval($_POST['amount']);
+$currency = floatval($_POST['currency']);
 $bank = $_POST['bank'];
+
+//floatval()
+//intval()
 
 $total = $amount * $currency;
 
@@ -117,10 +120,10 @@ if(!empty($name && $email && $amount && $currency && $bank )){
 
 echo '
 <div class="box">
-<h2>Hello,<b>'.$name.'</b></h2>
+<h2>Hello,<b> '.$name.'</b></h2>
 <p>We have confirmed your email as<b> '.$email.'</b>, and we will be sending you the following information!</p>
-<p>You have deposited'.$amount.'in foreign currency</p>
-<p>And, this will equal to'.$total.' American Dollars</p>
+<p>You have deposited '.$amount.' in foreign currency</p>
+<p>And, this will equal to $'.number_format($total).' American Dollars</p>
 <p>And, you will reveive a statement form '.$bank.' reflecting this deposit</p>
 </div>
 ';
