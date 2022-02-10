@@ -56,6 +56,13 @@ include ('includes/header.php');
         <li><a href="weeks/week4/arithmetic-form.php">arithmetic-form.php</a></li>
         </ul>
         <h3>Week 5</h3>
+        <ul>
+        <li><a href="weeks/week5/currency.php">currency.php</a></li>
+        <li><a href="weeks/week5/currency2.php">currency2.php</a></li>
+        <li><a href="weeks/week5/null.php">null.php</a></li>
+        
+        </ul>
+
         <h3>Week 6</h3>
         <h3>Week 7</h3>
         <h3>Week 8</h3>
