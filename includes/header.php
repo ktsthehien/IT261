@@ -16,7 +16,7 @@ case 'daily.php':
 $nav['index.php'] = 'Home';
 $nav['website/daily.php'] = 'Switch';
 $nav['weeks/week4/adder.php'] = 'Troubleshoot';
-$nav['calculator.php'] = 'Calculator';
+$nav['weeks/week5/calculator.php'] = 'Calculator';
 $nav['email.php'] = 'Email';
 $nav['gallery.php'] = 'Gallery';
 $nav['database.php'] = 'Database';
