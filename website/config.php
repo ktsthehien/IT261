@@ -1,9 +1,6 @@
-<?php 
- include('config.php');
-include ('includes/header.php');
-?>
-
 <?php
+ob_start();
+
 date_default_timezone_set('America/Los_Angeles');
 if(isset($_GET['today'])) {
     $today = $_GET['today'];
@@ -72,46 +69,52 @@ case 'Wednesday' :
                             break;
 
 }
+
+
+//we need to define the page that we are on as the page
+
+define ('THIS_PAGE',basename($_SERVER['PHP_SELF']));
+
+switch(THIS_PAGE) {
+case 'index.php':
+    $title ='Our Home Page';
+    $body='home';
+    $headline='Welcome to our Home Page';
+break;
+case 'daily.php':
+    $title ='Our Daily Page';
+    $body ='daily inner';
+    $headline='Welcome to Daily Page';
+break;
+case 'contact.php':
+    $title ='Our Contact Page';
+    $body ='contact inner';
+    $headline='Welcome to Contact Page';
+break;
+case 'contact.php':
+    $title ='Our Contact Page';
+    $body ='contact inner';
+    $headline='Welcome to Contact Page';
+break;
+}
+
+$nav['index.php'] = 'Home';
+$nav['about.php'] = 'About';
+$nav['daily.php'] = 'Daily';
+$nav['project.php'] = 'Project';
+$nav['contact.php'] = 'Contact';
+$nav['gallery.php'] = 'Gallery';
+
+function make_links($nav) {
+    $my_return = '';
+    foreach($nav as $key => $value) {
+        if(THIS_PAGE == $key) {
+            $my_return .= '<li><a class="current" href=" '.$key.' "> '.$value.'</a></li>';
+        } else {
+            $my_return .= '<li><a href=" '.$key.' "> '.$value.'</a></li>';
+        }
+    } // end foreach
+    return $my_return;
+} // end function
+
 ?>
-
-
-
-
-    <div id="wrapper">
-        <!-- <div id="hero">
-
-    </div>end hero -->
-
-    <main>
-        <h2 style="color:<?php echo $color ;?>"><?php echo $movie ;?></h2>
-        <p><?php echo $content;?></p>
-        <img id="daily_photo" src="images/<?php echo $pic ;?>" alt="<?php echo $alt;?>">
-        
-        
-    </main>
-
-    <aside>
-        <h2>
-            Daily Movie
-        </h2>
-        
-        <ul>
-        <li><a href="daily.php?today=Monday">Monday</a></li>
-        <li><a href="daily.php?today=Tuesday">Tuesday</a></li>
-        <li><a href="daily.php?today=Wednesday">Wednesday</a></li>
-        <li><a href="daily.php?today=Thursday">Thursday</a></li>
-        <li><a href="daily.php?today=Friday">Friday</a></li>
-        <li><a href="daily.php?today=Saturday">Saturday</a></li>
-        <li><a href="daily.php?today=Sunday">Sunday</a></li>
-        </ul>
-        
-    </aside>
-
-
-    </div> <!-- end wrapper -->
-
-<?php
-include ('includes/footer.php')
-?>
-    
-   

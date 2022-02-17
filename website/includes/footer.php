@@ -6,7 +6,7 @@
                 <li> <a href="../index.php">My Website</a></li>
                 <li> <a id="html-checker" href="">HTML Validation</a></li>
                 <li> <a id="css-checker" href="">CSS Validation</a></li>
-                <li><a id="github" href="https://github.com/ktsthehien">My GitHub</a></li>
+                <li><a id="github" href="https://github.com/ktsthehien/IT261">My GitHub</a></li>
 
 
             </ul>
