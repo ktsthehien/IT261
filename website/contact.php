@@ -1,42 +1,25 @@
-<?php 
- include('config.php');
-include ('includes/header.php');
+<?php
+    include('config.php');
+    include('includes/header.php');
 ?>
 
-
-
-
-
-
-    <div id="wrapper">
-        <!-- <div id="hero">
-
-    </div>end hero -->
-
+<div id="wrapper">
     <main>
-    <h2>
-            Here is My Contact Form
-        </h2>
+        <h2>Contact Hien</h2>
         
-        <?php 
- include('includes/form.php');
-?>    
+        <?php include('includes/form.php') ;?>
+        
     </main>
-
     <aside>
-        
-        
-        <ul>
+        <h3>What to watch</h3>
+        <img class="movie_img" src="images/you.jpg" alt="You">
+        <img class="movie_img" src="images/ozark.jpg" alt="Ozark">
+        <img class="movie_img" src="images/squidgame.jpg" alt="Squidgame">
+        <img class="movie_img" src="images/355.jpg" alt="355">
 
-        </ul>
-        
     </aside>
-
-
-    </div> <!-- end wrapper -->
+</div> <!--end wrapper -->
 
 <?php
-include ('includes/footer.php')
+    include('includes/footer.php');
 ?>
-    
-   

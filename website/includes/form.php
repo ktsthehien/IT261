@@ -1,117 +1,6 @@
-<?php
-
-$email = '';
-$comments = '';
-
-$first_name_err = '';
-$last_name_err = '';
-$email_err = '';
-$gender_err = '';
-$phone_err = '';
-$wines_err = '';
-$regions_err = '';
-$comments_err = '';
-$privacy_err = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    if (empty($_POST['first_name'])) {
-        $first_name_err = 'Please enter your first name';
-    } else {
-        $first_name = $_POST['first_name'];
-    }
-
-    if (empty($_POST['last_name'])) {
-        $last_name_err = 'Please enter your last name';
-    } else {
-        $last_name = $_POST['last_name'];
-    }
-
-    if (empty($_POST['email'])) {
-        $email_err = 'Please enter your email';
-    } else {
-        $email = $_POST['email'];
-    }
-
-    if (empty($_POST['gender'])) {
-        $gender_err = 'Please choose your gender';
-    } else {
-        $gender = $_POST['gender'];
-    }
-
-    if (empty($_POST['phone'])) {
-        $phone_err = 'Please enter your phone number';
-    } else {
-        $phone = $_POST['phone'];
-    }
-
-    if (empty($_POST['wines'])) {
-        $wines_err = 'What... no wines...?';
-    } else {
-        $wines = $_POST['wines'];
-    }
-
-    if ($_POST['regions'] == NULL) {
-        $regions_err = 'Please select your region';
-    } else {
-        $regions = $_POST['regions'];
-    }
-
-    if (empty($_POST['comments'])) {
-        $comments_err = 'Your comments, please!';
-    } else {
-        $comments = $_POST['comments'];
-    }
-
-    if (empty($_POST['privacy'])) {
-        $privacy_err = 'You cannot pass go!';
-    } else {
-        $privacy = $_POST['privacy'];
-    }
-
-    if(isset($_POST['first_name'],
-             $_POST['last_name'],
-             $_POST['email'],
-             $_POST['gender'],
-             $_POST['phone'],
-             $_POST['wines'],
-             $_POST['regions'],
-             $_POST['comments'],
-             $_POST['privacy'])) {
-        $to = 'ktsthehien@gmail.com';
-        $subject = 'Test email'.date('m/d/y, h i A');
-        $body = '
-            First name : '.$first_name.' '.PHP_EOL.'
-            Last name : '.$last_name.' '.PHP_EOL.'
-            Email : '.$email.' '.PHP_EOL.'
-            Gender : '.$gender.' '.PHP_EOL.'
-            Phone number : '.$phone.' '.PHP_EOL.'
-            Regions : '.$regions.' '.PHP_EOL.'
-            Comments : '.$comments.' '.PHP_EOL.'
-        ';
-
-        mail($to, $subject, $body);
-        header('Location:thx.php');
-
-        } // close isset
-
-} // end server request
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Class Exercise</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
-</head>
-<body>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
         <fieldset>
-            <legend>Contact Hien Nguyen</legend>
+            <legend>Contact Hien</legend>
 
             <label>First Name</label>
             <input type="text" name="first_name" value="<?php if(isset($_POST['first_name'])) echo htmlspecialchars($_POST['first_name']); ?>">
@@ -140,36 +29,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <span class="error"><?php echo $gender_err ;?></span>
 
             <label>Phone</label>
-            <input type="tel" name="phone" value="<?php if(isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']); ?>">
+            <input type="tel" name="phone" placeholder="xxx-xxx-xxxx" value="<?php if(isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']); ?>">
             <span class="error"><?php echo $phone_err ;?></span>
 
-            <label>Favorite Wines</label>
+            <label>Favorite Movie Genre</label>
             <ul>
                 <li>
-                    <input type="checkbox" name="wines[]" value="cab" <?php if(isset($_POST['wines']) && in_array('cab', $wines)) echo 'checked="checked" ';?>>Cab
+                    <input type="checkbox" name="movies[]" value="cab" <?php if(isset($_POST['movies']) && in_array('cab', $movies)) echo 'checked="checked" ';?>>Action Movie
                 </li>
                 <li>
-                    <input type="checkbox" name="wines[]" value="merlot" <?php if(isset($_POST['wines']) && in_array('merlot', $wines)) echo 'checked="checked" ';?>>Merlot
+                    <input type="checkbox" name="movies[]" value="merlot" <?php if(isset($_POST['movies']) && in_array('merlot', $movies)) echo 'checked="checked" ';?>>Drama
                 </li>
                 <li>
-                    <input type="checkbox" name="wines[]" value="syrah" <?php if(isset($_POST['wines']) && in_array('syrah', $wines)) echo 'checked="checked" ';?>>Syrah
+                    <input type="checkbox" name="movies[]" value="syrah" <?php if(isset($_POST['movies']) && in_array('syrah', $movies)) echo 'checked="checked" ';?>>Comedy
                 </li>
                 <li>
-                    <input type="checkbox" name="wines[]" value="malbec" <?php if(isset($_POST['wines']) && in_array('malbec', $wines)) echo 'checked="checked" ';?>>Malbec
+                    <input type="checkbox" name="movies[]" value="malbec" <?php if(isset($_POST['movies']) && in_array('malbec', $movies)) echo 'checked="checked" ';?>>Horror Movie
                 </li>
             </ul>
-            <span class="error"><?php echo $wines_err ;?></span>
+            <span class="error"><?php echo $movies_err ;?></span>
 
-            <label>Region</label>
-            <select name="regions">
-                <option value="" NULL <?php if(isset($_POST['regions']) && $_POST['regions'] == NULL) echo 'selected = "unselected"' ;?>>Select one</option>
-                <option value="nw" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'nw') echo 'selected = "selected"' ;?>>Northwest</option>
-                <option value="sw" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'sw') echo 'selected = "selected"' ;?>>Southwest</option>
-                <option value="mw" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'mw') echo 'selected = "selected"' ;?>>Midwest</option>
-                <option value="se" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'se') echo 'selected = "selected"' ;?>>Southeast</option>
-                <option value="ne" <?php if(isset($_POST['regions']) && $_POST['regions'] == 'ne') echo 'selected = "selected"' ;?>>Northeast</option>
+            <label>Country</label>
+            <select name="country">
+                <option value="" NULL <?php if(isset($_POST['country']) && $_POST['country'] == NULL) echo 'selected = "unselected"' ;?>>Select one</option>
+                <option value="nw" <?php if(isset($_POST['country']) && $_POST['country'] == 'nw') echo 'selected = "selected"' ;?>>United States</option>
+                <option value="sw" <?php if(isset($_POST['country']) && $_POST['country'] == 'sw') echo 'selected = "selected"' ;?>>England</option>
+                <option value="mw" <?php if(isset($_POST['country']) && $_POST['country'] == 'mw') echo 'selected = "selected"' ;?>>Korea</option>
+                <option value="se" <?php if(isset($_POST['country']) && $_POST['country'] == 'se') echo 'selected = "selected"' ;?>>Japan</option>
+                <option value="ne" <?php if(isset($_POST['country']) && $_POST['country'] == 'ne') echo 'selected = "selected"' ;?>>Spain</option>
             </select>
-            <span class="error"><?php echo $regions_err ;?></span>
+            <span class="error"><?php echo $country_err ;?></span>
 
             <label>Comments</label>
             <textarea name="comments"><?php if(isset($_POST['comments'])) echo htmlspecialchars($_POST['comments']) ;?></textarea>
@@ -187,10 +76,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="button" onclick="window.location.href='<?php echo $_SERVER['PHP_SELF'] ;?>'" value="Reset">
         </fieldset>
     </form>
-
-    <?php
-        
-    ?>
-
-</body>
-</html>

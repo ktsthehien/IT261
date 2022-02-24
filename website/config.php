@@ -117,4 +117,158 @@ function make_links($nav) {
     return $my_return;
 } // end function
 
+
+// start FORM
+
+
+ob_start();
+
+$first_name = '';
+$last_name = '';
+$email = '';
+$gender = '';
+$phone = '';
+$movies = '';
+$country = '';
+$comments = '';
+$privacy = '';
+
+$first_name_err = '';
+$last_name_err = '';
+$email_err = '';
+$gender_err = '';
+$phone_err = '';
+$movies_err = '';
+$country_err = '';
+$comments_err = '';
+$privacy_err = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (empty($_POST['first_name'])) {
+        $first_name_err = 'Please enter your first name';
+    } else {
+        $first_name = $_POST['first_name'];
+    }
+
+    if (empty($_POST['last_name'])) {
+        $last_name_err = 'Please enter your last name';
+    } else {
+        $last_name = $_POST['last_name'];
+    }
+
+    if (empty($_POST['email'])) {
+        $email_err = 'Please enter your email';
+    } else {
+        $email = $_POST['email'];
+    }
+
+    if (empty($_POST['gender'])) {
+        $gender_err = 'Please choose your gender';
+    } else {
+        $gender = $_POST['gender'];
+    }
+
+    //if (empty($_POST['phone'])) {
+    //$phone_err = 'Please enter your phone number';
+    // } else {
+    //$phone = $_POST['phone'];
+    // }
+
+    if(empty($_POST['phone'])) { // if empty, type in your number
+        $phone_err = 'Your phone number please!';
+    } elseif (array_key_exists('phone', $_POST)) {
+        if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])){ // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
+            $phone_err = 'Invalid format!';
+        } else {
+            $phone = $_POST['phone'];
+        } // end else
+    } // end main if
+
+    if (empty($_POST['movies'])) {
+        $movies_err = 'What... no movies...????';
+    } else {
+        $movies = $_POST['movies'];
+    }
+
+    if ($_POST['country'] == NULL) {
+        $country_err = 'Please select your country';
+    } else {
+        $country = $_POST['country'];
+    }
+
+    if (empty($_POST['comments'])) {
+        $comments_err = 'Your comments, please!';
+    } else {
+        $comments = $_POST['comments'];
+    }
+
+    if (empty($_POST['privacy'])) {
+        $privacy_err = 'You cannot pass go!';
+    } else {
+        $privacy = $_POST['privacy'];
+    }
+
+    // our lines functions
+    function my_movies($movies) {
+        $my_return = '';
+        if(!empty($_POST['movies'])) {
+            $my_return = implode(', ',$_POST['movies']);
+        } else {
+            $movies_err = 'Please check your movies';
+        }
+        return $my_return;
+    }
+ // end movie functions
+
+    if(isset($_POST['first_name'],
+             $_POST['last_name'],
+             $_POST['email'],
+             $_POST['gender'],
+             $_POST['phone'],
+             $_POST['movies'],
+             $_POST['country'],
+             $_POST['comments'],
+             $_POST['privacy'])) {
+        $to = 'ktsthehien@gmail.com';
+        $subject = 'Test email'.date('m/d/y, h i A');
+        $body = '
+            First name : '.$first_name.' '.PHP_EOL.'
+            Last name : '.$last_name.' '.PHP_EOL.'
+            Email : '.$email.' '.PHP_EOL.'
+            Gender : '.$gender.' '.PHP_EOL.'
+            Phone number : '.$phone.' '.PHP_EOL.'
+            country : '.$country.' '.PHP_EOL.'
+            movies : '.my_movies($movies).' '.PHP_EOL.'
+            Comments : '.$comments.' '.PHP_EOL.'
+        ';
+
+        if(!empty($first_name &&
+                  $last_name &&
+                  $email &&
+                  $gender &&
+                  $phone &&
+                  $movies &&
+                  $country &&
+                  $comments &&
+                  $privacy) &&
+                  preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+
+            $headers = array(
+                'From' => 'noreply@hiendesign.cu.ma',
+                'Reply to:' => ''.$email.''
+            );
+
+            mail($to, $subject, $body);
+            header('Location:thx.php');
+
+        } 
+// close if not empty statement
+
+        } 
+// close isset
+
+}  // end form
+
+
 ?>
