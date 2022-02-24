@@ -73,6 +73,15 @@ include ('includes/header.php');
         
         </ul>
         <h3>Week 7</h3>
+
+        <ul>
+        <li><a href="weeks/week7/form3.php">form3.php</a></li>
+        <li><a href="weeks/week7/random.php">random.php</a></li>
+        <li><a href="weeks/week7/strings.php">strings.php</a></li>
+        <li><a href="weeks/week7/pictures.php">pictures.php</a></li>
+
+        
+        </ul>
         <h3>Week 8</h3>
         <h3>Week 9</h3>
     </aside>
