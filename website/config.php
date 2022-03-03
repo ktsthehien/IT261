@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } // end main if
 
     if (empty($_POST['movies'])) {
-        $movies_err = 'What... no movies...????';
+        $movies_err = 'What... no movies genre...????';
     } else {
         $movies = $_POST['movies'];
     }
@@ -269,6 +269,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // close isset
 
 }  // end form
+
+// Start Gallery php
+
+$people['Scream'] = 'scream_December 2005_scream2.';
+$people['After_Life'] = 'afterl_August 2020_afterl2.';
+$people['The_Batman'] = 'batman_May 2018_batman2.';
+$people['Eternal'] = 'eterna_June 2021_eterna2.';
+$people['The_Euphoria'] = 'euphor_Octorber 1990_euphor2.';
 
 
 ?>

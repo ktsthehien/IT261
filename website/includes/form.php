@@ -35,16 +35,16 @@
             <label>Favorite Movie Genre</label>
             <ul>
                 <li>
-                    <input type="checkbox" name="movies[]" value="cab" <?php if(isset($_POST['movies']) && in_array('cab', $movies)) echo 'checked="checked" ';?>>Action Movie
+                    <input type="checkbox" name="movies[]" value="action movie" <?php if(isset($_POST['movies']) && in_array('action movie', $movies)) echo 'checked="checked" ';?>>Action Movie
                 </li>
                 <li>
-                    <input type="checkbox" name="movies[]" value="merlot" <?php if(isset($_POST['movies']) && in_array('merlot', $movies)) echo 'checked="checked" ';?>>Drama
+                    <input type="checkbox" name="movies[]" value="drama" <?php if(isset($_POST['movies']) && in_array('drama', $movies)) echo 'checked="checked" ';?>>Drama
                 </li>
                 <li>
-                    <input type="checkbox" name="movies[]" value="syrah" <?php if(isset($_POST['movies']) && in_array('syrah', $movies)) echo 'checked="checked" ';?>>Comedy
+                    <input type="checkbox" name="movies[]" value="comedy" <?php if(isset($_POST['movies']) && in_array('comedy', $movies)) echo 'checked="checked" ';?>>Comedy
                 </li>
                 <li>
-                    <input type="checkbox" name="movies[]" value="malbec" <?php if(isset($_POST['movies']) && in_array('malbec', $movies)) echo 'checked="checked" ';?>>Horror Movie
+                    <input type="checkbox" name="movies[]" value="horror movie" <?php if(isset($_POST['movies']) && in_array('horror movie', $movies)) echo 'checked="checked" ';?>>Horror Movie
                 </li>
             </ul>
             <span class="error"><?php echo $movies_err ;?></span>
@@ -52,11 +52,11 @@
             <label>Country</label>
             <select name="country">
                 <option value="" NULL <?php if(isset($_POST['country']) && $_POST['country'] == NULL) echo 'selected = "unselected"' ;?>>Select one</option>
-                <option value="nw" <?php if(isset($_POST['country']) && $_POST['country'] == 'nw') echo 'selected = "selected"' ;?>>United States</option>
-                <option value="sw" <?php if(isset($_POST['country']) && $_POST['country'] == 'sw') echo 'selected = "selected"' ;?>>England</option>
-                <option value="mw" <?php if(isset($_POST['country']) && $_POST['country'] == 'mw') echo 'selected = "selected"' ;?>>Korea</option>
-                <option value="se" <?php if(isset($_POST['country']) && $_POST['country'] == 'se') echo 'selected = "selected"' ;?>>Japan</option>
-                <option value="ne" <?php if(isset($_POST['country']) && $_POST['country'] == 'ne') echo 'selected = "selected"' ;?>>Spain</option>
+                <option value="united state" <?php if(isset($_POST['country']) && $_POST['country'] == 'united state') echo 'selected = "selected"' ;?>>United States</option>
+                <option value="england" <?php if(isset($_POST['country']) && $_POST['country'] == 'england') echo 'selected = "selected"' ;?>>England</option>
+                <option value="korea" <?php if(isset($_POST['country']) && $_POST['country'] == 'korea') echo 'selected = "selected"' ;?>>Korea</option>
+                <option value="japan" <?php if(isset($_POST['country']) && $_POST['country'] == 'japan') echo 'selected = "selected"' ;?>>Japan</option>
+                <option value="spain" <?php if(isset($_POST['country']) && $_POST['country'] == 'spain') echo 'selected = "selected"' ;?>>Spain</option>
             </select>
             <span class="error"><?php echo $country_err ;?></span>
 

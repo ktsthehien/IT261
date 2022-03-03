@@ -195,3 +195,25 @@ textarea {
     height: 140px;
     resize: none;
 }
+
+
+/*gallery page */
+table {
+    border: 1px solid blue;
+    border-collapse: collapse;
+    margin: 5px auto;
+    width: 120%;
+}
+th, td {
+    border: 1px solid blue;
+}
+.movie_image {
+    padding: 5px 5px 0 5px;
+    height: 300px;
+}
+.text {
+    padding: 10px;
+}
+.cb {
+    clear:  both;
+}
