@@ -19,7 +19,7 @@ li{
 }
 
 header {
-    background: darkblue;
+    background: black;
     overflow:hidden;
     padding: 20px 0;
 }
@@ -57,7 +57,6 @@ nav li {
 .current {
     color: red;
     }
-
 nav a {
     text-decoration: none;
     color: white;
@@ -85,11 +84,6 @@ main {
 #daily_photo{ float:left;
     margin:20px 20px;
     width: 600px;
-
-}
-.movie_img{
-    width: 47%;
-    margin: 2px;
 
 }
 
@@ -127,93 +121,4 @@ footer li {
     float:left;
     margin-right:30px;
     list-style-type: none;
-}
-
-
-
-/* styles for the FORM */
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-
-form {
-    width: 600px;
-    margin: 20px auto;
-
-}
-
-fieldset {
-    border: 1px solid rgb(23, 74, 241);
-    padding: 10px;
-    background-color:lightblue;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-input[type=text],
-input[type=email],
-input[type=tel] {
-    display: block;
-    height: 30px;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-input[type=submit] {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.error {
-    display: block;
-    color: red;
-    margin-bottom: 8px;
-    font-style: italic;
-}
-
-form ul {
-    margin-left: 10px;
-    list-style-type: none;
-    margin-bottom: 7px;
-}
-
-select, textarea {
-    margin-bottom: 10px;
-}
-
-textarea {
-    width: 100%;
-    height: 140px;
-    resize: none;
-}
-
-
-/*gallery page */
-table {
-    border: 1px solid blue;
-    border-collapse: collapse;
-    margin: 5px auto;
-    width: 120%;
-}
-th, td {
-    border: 1px solid blue;
-}
-.movie_image {
-    padding: 5px 5px 0 5px;
-    height: 300px;
-}
-.text {
-    padding: 10px;
-}
-.cb {
-    clear:  both;
 }
