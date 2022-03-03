@@ -1,3 +1,28 @@
+<?php
+//we need to define the page that we are on as the page
+
+define ('THIS_PAGE',basename($_SERVER['PHP_SELF']));
+
+switch(THIS_PAGE) {
+case 'index.php':
+    $title ='Our Home Page';
+    $body='home';
+break;
+case 'daily.php':
+    $title ='Our Daily Page';
+    $body ='daily inner';
+}
+
+$nav['index.php'] = 'Home';
+$nav['website/daily.php'] = 'Switch';
+$nav['weeks/week4/adder.php'] = 'Troubleshoot';
+$nav['weeks/week5/calculator.php'] = 'Calculator';
+$nav['email.php'] = 'Email';
+$nav['gallery.php'] = 'Gallery';
+$nav['database.php'] = 'Database';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +41,7 @@
 <header>
         <div id="inner-header">
             <a id="logo_text" href="index.php">
-                <img id="logo" src="images/logo.png" alt="logo">Hien's Website
+                <img id="logo" src="images/logo.png" alt="logo">Hien Nguyen
             </a>
 
             <!-- <nav>
@@ -32,11 +57,17 @@
 
             <nav>
     <ul>
-        <?php
+    <?php
 
+foreach($nav as $key => $value) {
+    if(THIS_PAGE == $key) {
+        echo '<li><a class="current" href=" '.$key.' "> '.$value.'</a></li>';
+    } else {
+        echo '<li><a href=" '.$key.' "> '.$value.'</a></li>';
+    }
+} // end foreach
 
-        echo make_links($nav);
-        ?>
+?>
     </ul>
 </nav>
 

@@ -3,7 +3,7 @@
             <ul>
                 <li> Copyright &copy;</li>
                 <li> All Rights Reserved</li>
-                <li> <a href="../index.php">My Website</a></li>
+                <li> <a href="index.php">Web Design</a></li>
                 <li> <a id="html-checker" href="">HTML Validation</a></li>
                 <li> <a id="css-checker" href="">CSS Validation</a></li>
                 <li><a id="github" href="https://github.com/ktsthehien/IT261">My GitHub</a></li>
