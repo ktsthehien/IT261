@@ -1,6 +1,10 @@
 <?php
 ob_start();
 
+define('DEBUG', 'TRUE');  // We want to see our errors
+
+include('credentials.php');
+
 date_default_timezone_set('America/Los_Angeles');
 if(isset($_GET['today'])) {
     $today = $_GET['today'];
@@ -279,4 +283,25 @@ $people['Eternal'] = 'eterna_June 2021_eterna2.';
 $people['The_Euphoria'] = 'euphor_Octorber 1990_euphor2.';
 
 
+function myError($myFile, $myLine, $errorMsg){
+    if(defined('DEBUG') && DEBUG){
+        echo 'Error in file: <b> '.$myFile.' </b> on line: <b> '.$myLine.' </b>';
+        echo 'Error message: <b> '.$errorMsg.'</b>';
+        die();
+    }  else {
+        echo ' Houston, we have a problem!';
+        die();
+    }
+}
+
+function random_images($photos) {
+    $my_return = '';
+    $i = rand(1,6);
+    $my_return = '<img class="movie_img" src="images/movie'.$i.'.jpg" alt="movie'.$i.'">';
+    return $my_return;
+}
+
+
 ?>
+
+

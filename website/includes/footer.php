@@ -21,6 +21,15 @@
             ("css-checker").setAttribute
             ("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
     </script>
-</body>
 
+
+<?php
+//release web server resources
+@mysqli_free_result($result);
+
+//close connection to mysql
+@mysqli_close($iConn);
+
+?>
+</body>
 </html>
