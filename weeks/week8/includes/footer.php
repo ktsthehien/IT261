@@ -9,6 +9,17 @@
 
 
 </ul>
+
+</div>
+
+<script>
+        document.getElementById
+            ("html-checker").setAttribute
+            ("href", "http://validator.w3.org/nu/?doc=" + location.href);
+        document.getElementById
+            ("css-checker").setAttribute
+            ("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+    </script>
 </footer>
 
 
