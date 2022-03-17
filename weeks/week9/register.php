@@ -1,7 +1,7 @@
 <?php // register.php
 
 include('server.php');
-include('includes/header-form.php');
+include('includes/header.php');
 
 ?>
 
@@ -41,9 +41,10 @@ include('errors.php'); ?>
 </fieldset>
 </form>
 
-<h3>Already a member?</h3>
-<span class="block"><a href="login.php">Log in here!</a></span>
+<p class="center">Already have an account? <a href="login.php">Please login!</a></p>
 
-</div> <!-- close wrapper -->
-</body>
-</html>
+</div>
+<!-- close wrapper div -->
+
+<?php
+include('./includes/footer.php');

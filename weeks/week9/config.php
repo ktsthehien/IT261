@@ -14,6 +14,7 @@ include('credentials.php');
  $success = 'You have successfully logged on';
  $errors = array();
 
+
 function myError($myFile, $myLine, $errorMsg)
 {
 if(defined('DEBUG') && DEBUG)
