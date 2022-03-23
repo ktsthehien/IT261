@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Temporary title</title>
+<title><?php echo $title;?></title>
 <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
 
